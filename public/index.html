@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepfake Detection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>DeepFake Detection</h1>
+
+      <!-- File upload input for both image and video -->
+      <input type="file" id="mediaInput" accept="image/*,video/*" />
+
+      <!-- Media Preview -->
+      <div id="mediaPreviewContainer">
+        <video
+          id="videoPlayer"
+          width="100%"
+          controls
+          style="display: none"
+        ></video>
+        <img
+          id="imagePreview"
+          src=""
+          alt="Image Preview"
+          style="display: none; max-width: 100%; border-radius: 8px"
+        />
+        <div id="mediaThumbnail" class="thumbnail"></div>
+      </div>
+
+      <!-- Loading Spinner -->
+      <div id="loadingSpinner" class="Spinner" style="display: none"></div>
+
+      <!-- Check Button -->
+      <button id="checkButton" disabled>Check Deepfake</button>
+
+      <!-- Result Section -->
+      <div id="result">
+        <p>
+          <strong>Status:</strong>
+          <span id="resultText">Waiting for media...</span>
+        </p>
+        <p id="detectionMessage">
+          The model will check the authenticity of the media once it is
+          processed.
+        </p>
+      </div>
+
+      <!-- Optional: Progress Bar -->
+      <div id="progressBarContainer">
+        <div id="progressBar"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script> -->
